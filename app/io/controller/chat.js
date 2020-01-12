@@ -22,7 +22,7 @@ class ChatController extends Controller {
          nsp.sockets[id].emit('res', "hello ....");
          // 指定房间连接信息列表
          nsp.adapter.clients([room], (err, clients) => {
-             console.log(JSON.stringify(clients));
+             console.log(JSON.stringify(clients),'clients');
          });
          //  给指定房间的每个人发送消息
          this.ctx.app.io.of('/').to(room).emit('online', this.ctx.socket.id+ "上线了");
